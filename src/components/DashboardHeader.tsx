@@ -1,6 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { TrendingUp, Filter, Settings } from "lucide-react";
+import { Home, Target, MapPin, Heart } from "lucide-react";
+import { NavigationLink } from "./NavigationLink";
 
 export const DashboardHeader = () => {
   return (
@@ -11,17 +10,14 @@ export const DashboardHeader = () => {
             <h1 className="text-3xl font-bold tracking-tight">PropFlow AI</h1>
             <p className="text-muted-foreground mt-1">Autonomous Deal Discovery Platform</p>
           </div>
-          <div className="flex gap-3">
-            <Button variant="outline" size="sm">
-              <Filter className="mr-2 h-4 w-4" />
-              Filters
-            </Button>
-            <Button variant="outline" size="sm">
-              <Settings className="mr-2 h-4 w-4" />
-              Criteria
-            </Button>
-          </div>
         </div>
+
+        <nav className="flex gap-1 mb-6">
+          <NavigationLink to="/" icon={Home}>Dashboard</NavigationLink>
+          <NavigationLink to="/criteria" icon={Target}>Criteria</NavigationLink>
+          <NavigationLink to="/markets" icon={MapPin}>Markets</NavigationLink>
+          <NavigationLink to="/favorites" icon={Heart}>Favorites</NavigationLink>
+        </nav>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="p-4 border rounded-lg bg-muted/30">
