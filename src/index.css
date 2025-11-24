@@ -38,16 +38,29 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    /* PropFlow AI - Investment Scoring Colors */
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
+    /* PropFlow AI - Enhanced Investment Scoring Colors */
+    --success: 142 71% 45%;
+    --success-foreground: 138 76% 97%;
+    --success-glow: 142 71% 45% / 0.15;
     --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 0%;
-    --chart-1: 142 76% 36%;
+    --warning-foreground: 48 96% 89%;
+    --warning-glow: 38 92% 50% / 0.15;
+    
+    /* Premium shadows and effects */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.03);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.03);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.03);
+    
+    /* Glassmorphism */
+    --glass-bg: 255 255 255 / 0.7;
+    --glass-border: 226 232 240 / 0.5;
+    
+    --chart-1: 142 71% 45%;
     --chart-2: 38 92% 50%;
-    --chart-3: 0 84.2% 60.2%;
-    --chart-4: 217 91% 60%;
-    --chart-5: 280 65% 60%;
+    --chart-3: 221 83% 53%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 82% 52%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -67,8 +80,8 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -95,16 +108,27 @@ All colors MUST be HSL.
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
     
-    /* PropFlow AI - Investment Scoring Colors (Dark Mode) */
+    /* PropFlow AI - Enhanced Investment Scoring Colors (Dark Mode) */
     --success: 142 71% 45%;
-    --success-foreground: 0 0% 0%;
+    --success-foreground: 138 76% 97%;
+    --success-glow: 142 71% 45% / 0.2;
     --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 0%;
+    --warning-foreground: 48 96% 89%;
+    --warning-glow: 38 92% 50% / 0.2;
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.15);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.15), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.15), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+    --glass-bg: 15 23 42 / 0.7;
+    --glass-border: 51 65 85 / 0.3;
+    
     --chart-1: 142 71% 45%;
     --chart-2: 38 92% 50%;
-    --chart-3: 0 84.2% 60.2%;
-    --chart-4: 217 91% 60%;
-    --chart-5: 280 65% 60%;
+    --chart-3: 221 83% 53%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 82% 52%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;

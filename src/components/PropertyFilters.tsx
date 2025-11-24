@@ -27,44 +27,46 @@ export const PropertyFilters = ({ filters, onFilterChange, onReset }: PropertyFi
   };
 
   return (
-    <Card>
-      <CardHeader>
+    <Card className="border-border/50 shadow-md">
+      <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
-          <CardTitle>Filters & Sort</CardTitle>
-          <Button variant="ghost" size="sm" onClick={onReset}>
-            <X className="h-4 w-4 mr-1" />
+          <CardTitle className="text-xl">Filters & Sort</CardTitle>
+          <Button variant="ghost" size="sm" onClick={onReset} className="hover:bg-accent/50 transition-colors">
+            <X className="h-4 w-4 mr-2" />
             Reset
           </Button>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           <div className="space-y-2">
-            <Label htmlFor="minPrice">Min Price</Label>
+            <Label htmlFor="minPrice" className="text-sm font-medium">Min Price</Label>
             <Input
               id="minPrice"
               type="number"
-              placeholder="0"
+              placeholder="$0"
               value={filters.minPrice}
               onChange={(e) => updateFilter("minPrice", e.target.value)}
+              className="h-10 rounded-lg border-border/50 focus:border-primary transition-colors"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="maxPrice">Max Price</Label>
+            <Label htmlFor="maxPrice" className="text-sm font-medium">Max Price</Label>
             <Input
               id="maxPrice"
               type="number"
-              placeholder="1000000"
+              placeholder="$1,000,000"
               value={filters.maxPrice}
               onChange={(e) => updateFilter("maxPrice", e.target.value)}
+              className="h-10 rounded-lg border-border/50 focus:border-primary transition-colors"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="minBedrooms">Min Bedrooms</Label>
+            <Label htmlFor="minBedrooms" className="text-sm font-medium">Min Bedrooms</Label>
             <Select value={filters.minBedrooms} onValueChange={(v) => updateFilter("minBedrooms", v)}>
-              <SelectTrigger id="minBedrooms">
+              <SelectTrigger id="minBedrooms" className="h-10 rounded-lg border-border/50">
                 <SelectValue placeholder="Any" />
               </SelectTrigger>
               <SelectContent>
@@ -78,9 +80,9 @@ export const PropertyFilters = ({ filters, onFilterChange, onReset }: PropertyFi
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="minScore">Min Score</Label>
+            <Label htmlFor="minScore" className="text-sm font-medium">Min Score</Label>
             <Select value={filters.minScore} onValueChange={(v) => updateFilter("minScore", v)}>
-              <SelectTrigger id="minScore">
+              <SelectTrigger id="minScore" className="h-10 rounded-lg border-border/50">
                 <SelectValue placeholder="Any" />
               </SelectTrigger>
               <SelectContent>
@@ -94,9 +96,9 @@ export const PropertyFilters = ({ filters, onFilterChange, onReset }: PropertyFi
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="propertyType">Property Type</Label>
+            <Label htmlFor="propertyType" className="text-sm font-medium">Property Type</Label>
             <Select value={filters.propertyType} onValueChange={(v) => updateFilter("propertyType", v)}>
-              <SelectTrigger id="propertyType">
+              <SelectTrigger id="propertyType" className="h-10 rounded-lg border-border/50">
                 <SelectValue placeholder="All Types" />
               </SelectTrigger>
               <SelectContent>
@@ -109,9 +111,9 @@ export const PropertyFilters = ({ filters, onFilterChange, onReset }: PropertyFi
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="city">City</Label>
+            <Label htmlFor="city" className="text-sm font-medium">City</Label>
             <Select value={filters.city} onValueChange={(v) => updateFilter("city", v)}>
-              <SelectTrigger id="city">
+              <SelectTrigger id="city" className="h-10 rounded-lg border-border/50">
                 <SelectValue placeholder="All Cities" />
               </SelectTrigger>
               <SelectContent>
@@ -123,9 +125,9 @@ export const PropertyFilters = ({ filters, onFilterChange, onReset }: PropertyFi
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <Label htmlFor="sortBy">Sort By</Label>
+            <Label htmlFor="sortBy" className="text-sm font-medium">Sort By</Label>
             <Select value={filters.sortBy} onValueChange={(v) => updateFilter("sortBy", v)}>
-              <SelectTrigger id="sortBy">
+              <SelectTrigger id="sortBy" className="h-10 rounded-lg border-border/50">
                 <SelectValue placeholder="Score (High to Low)" />
               </SelectTrigger>
               <SelectContent>

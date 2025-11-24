@@ -82,11 +82,17 @@ const Index = () => {
       <DashboardHeader />
       
       <div className="container mx-auto px-6 py-8">
-        <Tabs defaultValue="hot" className="space-y-6">
-          <TabsList>
-            <TabsTrigger value="hot">🔥 Hot Deals ({hotDeals.length})</TabsTrigger>
-            <TabsTrigger value="recent">🆕 Recent ({recentDeals.length})</TabsTrigger>
-            <TabsTrigger value="all">📋 All Properties ({filteredAndSortedProperties.length})</TabsTrigger>
+        <Tabs defaultValue="hot" className="space-y-8">
+          <TabsList className="bg-muted/50 p-1 h-auto rounded-xl">
+            <TabsTrigger value="hot" className="rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm px-6 py-3">
+              🔥 Hot Deals <span className="ml-2 px-2 py-0.5 rounded-full bg-success/10 text-success text-xs font-bold">{hotDeals.length}</span>
+            </TabsTrigger>
+            <TabsTrigger value="recent" className="rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm px-6 py-3">
+              🆕 Recent <span className="ml-2 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-bold">{recentDeals.length}</span>
+            </TabsTrigger>
+            <TabsTrigger value="all" className="rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm px-6 py-3">
+              📋 All Properties <span className="ml-2 px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs font-bold">{filteredAndSortedProperties.length}</span>
+            </TabsTrigger>
           </TabsList>
 
           <PropertyFilters 
@@ -97,8 +103,8 @@ const Index = () => {
 
           <TabsContent value="hot" className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold mb-4">Top Scoring Deals</h2>
-              <p className="text-muted-foreground mb-6">Properties with investment score ≥ 80</p>
+              <h2 className="text-3xl font-bold mb-2">Top Scoring Deals</h2>
+              <p className="text-muted-foreground mb-8 text-base">Properties with investment score ≥ 80</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {hotDeals.map(property => (
                   <PropertyCard 
@@ -113,8 +119,8 @@ const Index = () => {
 
           <TabsContent value="recent" className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold mb-4">Recently Listed</h2>
-              <p className="text-muted-foreground mb-6">Properties added in the last 7 days</p>
+              <h2 className="text-3xl font-bold mb-2">Recently Listed</h2>
+              <p className="text-muted-foreground mb-8 text-base">Properties added in the last 7 days</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {recentDeals.map(property => (
                   <PropertyCard 
@@ -129,8 +135,8 @@ const Index = () => {
 
           <TabsContent value="all" className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold mb-4">All Properties</h2>
-              <p className="text-muted-foreground mb-6">Complete property inventory across all markets</p>
+              <h2 className="text-3xl font-bold mb-2">All Properties</h2>
+              <p className="text-muted-foreground mb-8 text-base">Complete property inventory across all markets</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredAndSortedProperties.map(property => (
                   <PropertyCard 
