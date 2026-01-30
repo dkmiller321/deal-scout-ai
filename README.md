@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
+# PropFlow AI - Real Estate Deal Analyzer
 
-## Project info
+AI-powered investment property analysis tool. Enter any property details to get instant investment scoring, cash flow projections, and AI-generated insights.
 
-**URL**: https://lovable.dev/projects/e8ad501d-7e03-4edd-84be-748db1441e57
+## Current Features
 
-## How can I edit this code?
+### Deal Analyzer
+- **Property Input Form** - Enter address, price, bedrooms, bathrooms, sqft, year built
+- **Investment Scoring** - Proprietary 0-100 score based on:
+  - Cap Rate (weight: 25%)
+  - Cash-on-Cash Return (weight: 25%)
+  - Value Potential (weight: 20%)
+  - Market Timing (weight: 15%)
+  - Property Characteristics (weight: 15%)
+- **Financial Calculations**
+  - Estimated monthly rent (based on price/bedroom formula)
+  - Cap rate calculation
+  - Cash-on-cash return (assumes 25% down, 7% interest, 30yr)
+  - Annual cash flow projection
+- **AI Analysis** - Generated insights and recommendations
 
-There are several ways of editing your application.
+### User Features
+- **Authentication** - Clerk-based sign in/sign up
+- **Save Analyses** - Store analyzed properties to your account
+- **Investment Criteria** - Set and save your investment preferences
+- **Favorites** - Bookmark properties for later review
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e8ad501d-7e03-4edd-84be-748db1441e57) and start prompting.
+- **Framework**: Next.js 15 (App Router)
+- **API**: tRPC for type-safe endpoints
+- **Database**: PostgreSQL via Supabase
+- **ORM**: Drizzle ORM
+- **Auth**: Clerk
+- **Styling**: Tailwind CSS + shadcn/ui
+- **State**: Zustand (client), React Query (server)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Setup
 
-**Use your preferred IDE**
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Copy `.env.local.example` to `.env.local` and fill in:
+   ```
+   DATABASE_URL=your_supabase_connection_string
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
+   CLERK_SECRET_KEY=your_clerk_secret
+   ```
+4. Push database schema: `npm run db:push`
+5. Start dev server: `npm run dev`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Potential Improvements / Future Work
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Data Enhancements
+- [ ] **HUD Fair Market Rent API** - Replace simple rent estimation with actual HUD data by ZIP code (free)
+- [ ] **County Assessor Integration** - Pull property details automatically from public records
+- [ ] **Zillow/Redfin URL Parser** - Paste a listing URL and auto-fill property details
+- [ ] **Google Street View** - Show property images via Street View API
 
-Follow these steps:
+### Analysis Improvements
+- [ ] **Neighborhood Scoring** - Census data for crime, schools, demographics
+- [ ] **Comparable Sales** - Show recent sales in the area
+- [ ] **Rent Comparables** - Similar rental listings nearby
+- [ ] **Rehab Cost Estimator** - Estimate renovation costs based on age/condition
+- [ ] **ARV Calculator** - After-repair value estimation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### User Features
+- [ ] **Deal Sharing** - Share analysis via public link
+- [ ] **Export to PDF** - Download analysis report
+- [ ] **Portfolio Tracking** - Track multiple properties you own
+- [ ] **Email Alerts** - Get notified when saved criteria match new analyses
+- [ ] **Collaboration** - Share deals with partners/investors
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Monetization Ideas
+- [ ] Free tier: 5 analyses/month
+- [ ] Pro tier: Unlimited analyses + PDF export + portfolio tracking
+- [ ] Team tier: Collaboration features
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Technical Debt
+- [ ] Add comprehensive test coverage
+- [ ] Implement rate limiting on analyze endpoint
+- [ ] Add input validation for address format
+- [ ] Optimize database queries with proper indexes
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## License
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e8ad501d-7e03-4edd-84be-748db1441e57) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Private - All rights reserved

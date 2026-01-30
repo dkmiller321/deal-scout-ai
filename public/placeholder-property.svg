@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" fill="none">
+  <rect width="800" height="500" fill="#1e293b"/>
+  <rect width="800" height="500" fill="url(#grad)" opacity="0.5"/>
+  <!-- House icon -->
+  <g transform="translate(350, 180)">
+    <path d="M50 10L10 45V90H40V60H60V90H90V45L50 10Z" fill="#475569" stroke="#64748b" stroke-width="3"/>
+    <rect x="42" y="65" width="16" height="25" fill="#334155"/>
+    <rect x="22" y="50" width="12" height="12" fill="#0ea5e9" opacity="0.6"/>
+    <rect x="66" y="50" width="12" height="12" fill="#0ea5e9" opacity="0.6"/>
+    <polygon points="50,0 5,40 15,40 50,10 85,40 95,40" fill="#334155"/>
+  </g>
+  <text x="400" y="320" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="18" font-weight="500">No Image Available</text>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+</svg>
