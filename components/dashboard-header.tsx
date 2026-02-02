@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { Route } from "next";
 import { usePathname } from "next/navigation";
 import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
@@ -12,10 +13,10 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const navItems = [
-  { href: "/", label: "Analyze", icon: Calculator },
-  { href: "/criteria", label: "My Criteria", icon: Target },
-  { href: "/favorites", label: "Saved Deals", icon: Heart },
+const navItems: Array<{ href: Route; label: string; icon: typeof Calculator }> = [
+  { href: "/" as Route, label: "Analyze", icon: Calculator },
+  { href: "/criteria" as Route, label: "My Criteria", icon: Target },
+  { href: "/favorites" as Route, label: "Saved Deals", icon: Heart },
 ];
 
 export function DashboardHeader() {
@@ -65,12 +66,12 @@ export function DashboardHeader() {
             />
           </SignedIn>
           <SignedOut>
-            <Link href="/sign-in">
+            <Link href={"/sign-in" as Route}>
               <Button variant="outline" size="sm">
                 Sign In
               </Button>
             </Link>
-            <Link href="/sign-up">
+            <Link href={"/sign-up" as Route}>
               <Button size="sm">Get Started</Button>
             </Link>
           </SignedOut>
